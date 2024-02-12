@@ -199,7 +199,7 @@ jobs:
       - name: Create coverage comment
         uses: peter-evans/create-or-update-comment@v1
         with:
-          issue-number: ${{stepsdaad}}
+          issue-number: ${{steps.prnum.outputs.num}}
           body: |
             ## Documentation Coverage
 
