@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["chuffed_rs","conjure_core","conjure_oxide","conjure_rules","enum_compatability_macro","minion_rs","uniplate"];
