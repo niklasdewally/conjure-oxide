@@ -8,16 +8,16 @@
 +-------------------------------------+------------+------------+------------+------------+
 | File                                | Documented | Percentage |   Examples | Percentage |
 +-------------------------------------+------------+------------+------------+------------+
-| ...m_compatability_macro/src/lib.rs |          2 |     100.0% |          1 |      50.0% |
+| ...jure_rules_proc_macro/src/lib.rs |          3 |     100.0% |          1 |      33.3% |
 +-------------------------------------+------------+------------+------------+------------+
-| Total                               |          2 |     100.0% |          1 |      50.0% |
+| Total                               |          3 |     100.0% |          1 |      33.3% |
 +-------------------------------------+------------+------------+------------+------------+
 +-------------------------------------+------------+------------+------------+------------+
 | File                                | Documented | Percentage |   Examples | Percentage |
 +-------------------------------------+------------+------------+------------+------------+
-| ...jure_rules_proc_macro/src/lib.rs |          3 |     100.0% |          1 |      33.3% |
+| ...m_compatability_macro/src/lib.rs |          2 |     100.0% |          1 |      50.0% |
 +-------------------------------------+------------+------------+------------+------------+
-| Total                               |          3 |     100.0% |          1 |      33.3% |
+| Total                               |          2 |     100.0% |          1 |      50.0% |
 +-------------------------------------+------------+------------+------------+------------+
 +-------------------------------------+------------+------------+------------+------------+
 | File                                | Documented | Percentage |   Examples | Percentage |
@@ -76,29 +76,25 @@
 | ...oxide/src/rule_engine/rewrite.rs |          1 |      25.0% |          0 |       0.0% |
 | conjure_oxide/src/rules/constant.rs |          1 |     100.0% |          0 |       0.0% |
 | conjure_oxide/src/rules/mod.rs      |          0 |       0.0% |          0 |       0.0% |
-| conjure_oxide/src/solvers/error.rs  |          0 |       0.0% |          0 |       0.0% |
-| conjure_oxide/src/solvers/kissat.rs |          1 |      14.3% |          0 |       0.0% |
-| conjure_oxide/src/solvers/minion.rs |          1 |     100.0% |          0 |       0.0% |
-| conjure_oxide/src/solvers/mod.rs    |          0 |       0.0% |          0 |       0.0% |
-| conjure_oxide/src/unstable/mod.rs   |          1 |     100.0% |          0 |       0.0% |
-| ...ver_interface/adaptors/minion.rs |          1 |     100.0% |          0 |       0.0% |
-| ...solver_interface/adaptors/mod.rs |          1 |     100.0% |          0 |       0.0% |
-| ...unstable/solver_interface/mod.rs |         13 |      35.1% |          1 |       4.5% |
-| ...lver_interface/model_modifier.rs |          7 |      70.0% |          0 |       0.0% |
-| ...table/solver_interface/states.rs |          7 |      58.3% |          0 |       0.0% |
-| ...stable/solver_interface/stats.rs |          1 |      33.3% |          0 |       0.0% |
+| ...de/src/solver/adaptors/kissat.rs |          1 |     100.0% |          0 |       0.0% |
+| ...de/src/solver/adaptors/minion.rs |          1 |     100.0% |          0 |       0.0% |
+| ...oxide/src/solver/adaptors/mod.rs |          1 |     100.0% |          0 |       0.0% |
+| conjure_oxide/src/solver/mod.rs     |         13 |      35.1% |          1 |       4.5% |
+| ...ide/src/solver/model_modifier.rs |          7 |      70.0% |          0 |       0.0% |
+| conjure_oxide/src/solver/states.rs  |          7 |      58.3% |          0 |       0.0% |
+| conjure_oxide/src/solver/stats.rs   |          1 |      33.3% |          0 |       0.0% |
 | conjure_oxide/src/utils/conjure.rs  |          0 |       0.0% |          0 |       0.0% |
 | conjure_oxide/src/utils/json.rs     |          2 |      66.7% |          0 |       0.0% |
 | conjure_oxide/src/utils/misc.rs     |          0 |       0.0% |          0 |       0.0% |
 | conjure_oxide/src/utils/mod.rs      |          0 |       0.0% |          0 |       0.0% |
 | conjure_oxide/src/utils/testing.rs  |          0 |       0.0% |          0 |       0.0% |
 +-------------------------------------+------------+------------+------------+------------+
-| Total                               |         45 |      34.6% |          1 |       1.2% |
+| Total                               |         43 |      37.4% |          1 |       1.3% |
 +-------------------------------------+------------+------------+------------+------------+
 +-------------------------------------+------------+------------+------------+------------+
 | File                                | Documented | Percentage |   Examples | Percentage |
 +-------------------------------------+------------+------------+------------+------------+
-| ...d7c5cf6e/out/chuffed_bindings.rs |          0 |       0.0% |          0 |       0.0% |
+| ...6b865366/out/chuffed_bindings.rs |          0 |       0.0% |          0 |       0.0% |
 | solvers/chuffed/src/lib.rs          |          0 |       0.0% |          0 |       0.0% |
 +-------------------------------------+------------+------------+------------+------------+
 | Total                               |          0 |       0.0% |          0 |       0.0% |
