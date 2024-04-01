@@ -4,7 +4,7 @@
 
 use std::sync::Arc;
 
-pub use super::Tree;
+use super::Tree;
 use im;
 use im::vector;
 

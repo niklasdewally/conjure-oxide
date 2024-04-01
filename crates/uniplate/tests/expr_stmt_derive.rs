@@ -1,16 +1,17 @@
-// Expr and Stmt from the paper, manually derived.
+// Expr and Stmt from the paper, derived using the macro
 
 use std::iter::zip;
 
 use im::vector;
 //use uniplate::test_common::paper::*;
 use uniplate::biplate::*;
-use uniplate::tree::*;
+use uniplate::Biplate;
+use uniplate::Tree;
 
 use self::Expr::*;
 
 // Stmt and Expr to demonstrate and test multitype traversals.
-#[derive(Eq, PartialEq, Clone, Debug)]
+#[derive(Eq, PartialEq, Clone, Debug, Biplate)]
 pub enum Stmt {
     Assign(String, Expr),
     Sequence(Vec<Stmt>),

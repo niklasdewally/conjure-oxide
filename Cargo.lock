@@ -1550,6 +1550,7 @@ dependencies = [
  "proptest",
  "proptest-derive",
  "thiserror",
+ "uniplate_derive",
 ]
 
 [[package]]
@@ -1560,7 +1561,6 @@ dependencies = [
  "proc-macro2",
  "quote 1.0.35",
  "syn 2.0.57",
- "uniplate",
 ]
 
 [[package]]

@@ -13,7 +13,7 @@ pub enum ParseTypeArgumentError {
 }
 
 /// Represents a field in a tree-like structure. Used for deriving the uniplate implementation.
-#[derive(Debug)]
+//#[derive(Debug)]
 pub enum UniplateField {
     /// Any other valid identifier
     Identifier(Ident),

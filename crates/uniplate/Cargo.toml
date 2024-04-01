@@ -12,6 +12,7 @@ im = {version = "15.1.0", features = ["proptest"]}
 proptest = "1.4.0"
 proptest-derive = "0.4.0"
 thiserror = "1.0.58"
+uniplate_derive = { version = "0.1.0", path = "../uniplate_derive" }
 
 [lints]
 workspace = true
