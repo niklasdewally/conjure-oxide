@@ -64,12 +64,8 @@ pub fn parse_essence_file(
 }
 
 pub fn get_minion_solutions(model: Model) -> Result<Vec<HashMap<Name, Constant>>, anyhow::Error> {
+
     let solver = Solver::new(Minion::new());
-
-    println!("Building Minion model...");
-    let solver = solver.load_model(model)?;
-
-    println!("Running Minion...");
 
     let all_solutions_ref = Arc::new(Mutex::<Vec<HashMap<Name, Constant>>>::new(vec![]));
     let all_solutions_ref_2 = all_solutions_ref.clone();

@@ -10,8 +10,8 @@ use im::vector;
 
 pub trait Biplate<To>
 where
-    Self: Sized + Clone + Eq + Uniplate + 'static,
-    To: Sized + Clone + Eq + Uniplate + 'static,
+    Self: Sized + Clone + Eq + 'static,
+    To:   Sized + Clone + Eq + Uniplate + 'static,
 {
     /// Returns all the top most children of type to within from.
     ///
@@ -141,5 +141,37 @@ where
             self.clone(),
             children.into_iter().map(|c| c.cata(op.clone())).collect(),
         )
+    }
+}
+
+impl<T: Uniplate, U: Uniplate + Biplate<T>> Biplate<T> for Box<U> {
+    fn biplate(&self) -> (Tree<T>, Box<dyn Fn(Tree<T>) -> Self>) {
+        // magically unbox!
+        let (children,ctx) = <U as Biplate<T>>::biplate(&*self);
+        (children, Box::new(move |ts| Box::new(ctx(ts))))
+    }
+}
+
+impl<T: Clone + Eq + Uniplate> Uniplate for Box<T> {
+    // magically unbox!
+    // FIXME: this is a wierd one I don't like!
+    // might be better in the macro impl
+    fn uniplate(&self) -> (Tree<Self>, Box<dyn Fn(Tree<Self>) -> Self>) {
+        let (children,ctx) = (**self).uniplate();
+        todo!()
+    }
+}
+
+impl<T: Uniplate, U: Uniplate> Biplate<T> for Vec<U> {
+    fn biplate(&self) -> (Tree<T>, Box<dyn Fn(Tree<T>) -> Self>) {
+        todo!()
+    }
+}
+
+    
+
+impl<T: Clone + Eq + Uniplate> Uniplate for Vec<T> {
+    fn uniplate(&self) -> (Tree<Self>, Box<dyn Fn(Tree<Self>) -> Self>) {
+        todo!()
     }
 }
