@@ -11,7 +11,7 @@ use uniplate::Tree;
 use self::Expr::*;
 
 // Stmt and Expr to demonstrate and test multitype traversals.
-#[derive(Eq, PartialEq, Clone, Debug, Biplate)]
+#[derive(Eq, PartialEq, Clone, Debug, derive_biplate)]
 pub enum Stmt {
     Assign(String, Expr),
     Sequence(Vec<Stmt>),
