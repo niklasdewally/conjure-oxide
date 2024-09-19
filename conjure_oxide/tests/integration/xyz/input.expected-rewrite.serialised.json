@@ -2,7 +2,7 @@
   "constraints": {
     "And": [
       {
-        "clean": false,
+        "clean": true,
         "etype": null
       },
       [

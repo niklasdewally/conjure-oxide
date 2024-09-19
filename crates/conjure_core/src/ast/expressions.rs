@@ -235,7 +235,10 @@ impl Expression {
             Expression::Ineq(metadata, box1, box2, box3) => metadata.clean,
             Expression::AllDiff(metadata, exprs) => metadata.clean,
             Expression::SumEq(metadata, exprs, expr) => metadata.clean,
-            _ => false,
+            Expression::Bubble(metadata, expression, expression1) => metadata.clean,
+            Expression::SafeDiv(metadata, expression, expression1) => metadata.clean,
+            Expression::UnsafeDiv(metadata, expression, expression1) => metadata.clean,
+            Expression::DivEq(metadata, expression, expression1, expression2) => metadata.clean,
         }
     }
 

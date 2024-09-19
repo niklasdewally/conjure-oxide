@@ -2,14 +2,14 @@
   "constraints": {
     "And": [
       {
-        "clean": false,
+        "clean": true,
         "etype": null
       },
       [
         {
           "Ineq": [
             {
-              "clean": false,
+              "clean": true,
               "etype": null
             },
             {

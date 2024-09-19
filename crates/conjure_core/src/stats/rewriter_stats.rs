@@ -3,7 +3,7 @@ use serde::Serialize;
 use serde_with::skip_serializing_none;
 
 #[skip_serializing_none]
-#[derive(Default, Serialize, Clone, JsonSchema)]
+#[derive(Default, Serialize, Clone, JsonSchema,Debug)]
 #[serde(rename_all = "camelCase")]
 #[allow(dead_code)]
 

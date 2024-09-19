@@ -2,14 +2,14 @@
   "constraints": {
     "And": [
       {
-        "clean": false,
+        "clean": true,
         "etype": null
       },
       [
         {
           "Or": [
             {
-              "clean": false,
+              "clean": true,
               "etype": null
             },
             [

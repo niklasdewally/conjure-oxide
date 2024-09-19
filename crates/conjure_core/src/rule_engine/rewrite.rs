@@ -101,17 +101,23 @@ fn rewrite_iteration<'a>(
     apply_optimizations: bool,
     stats: &mut RewriterStats,
 ) -> Option<Reduction> {
+
     if apply_optimizations && expression.is_clean() {
+        assert!(expression.children().iter().all(|c| c.is_clean())); // children should be clean
         // Skip processing this expression if it's clean
         return None;
     }
 
     // Mark the expression as clean - will be marked dirty if any rule is applied
     let mut expression = expression.clone();
+    expression.set_clean(true);
+    assert!(expression.is_clean());
 
     let rule_results = apply_all_rules(&expression, model, rules, stats);
     if let Some(new) = choose_rewrite(&rule_results) {
         // If a rule is applied, mark the expression as dirty
+        expression.set_clean(false);
+        assert!(!expression.is_clean());
         return Some(new);
     }
 
@@ -151,8 +157,8 @@ fn apply_all_rules<'a>(
                 stats.rewriter_rule_applications =
                     Some(stats.rewriter_rule_applications.unwrap() + 1);
                 // Assert no clean children
-                // assert!(!red.new_expression.children().iter().any(|c| c.is_clean()), "Rule that caused assertion to fail: {:?}", rule.name);
-                // assert!(!red.new_expression.children().iter().any(|c| c.children().iter().any(|c| c.is_clean())));
+                //assert!(!red.new_expression.children().iter().any(|c| c.is_clean()), "Rule that caused assertion to fail: {:?}", rule.name);
+                //assert!(!red.new_expression.children().iter().any(|c| c.children().iter().any(|c| c.is_clean())));
                 results.push(RuleResult {
                     rule,
                     reduction: red,

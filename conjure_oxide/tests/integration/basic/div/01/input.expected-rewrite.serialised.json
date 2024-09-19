@@ -9,7 +9,7 @@
         {
           "Eq": [
             {
-              "clean": false,
+              "clean": true,
               "etype": null
             },
             {

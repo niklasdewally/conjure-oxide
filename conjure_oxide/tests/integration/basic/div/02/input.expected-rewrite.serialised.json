@@ -2,7 +2,7 @@
   "constraints": {
     "Ineq": [
       {
-        "clean": false,
+        "clean": true,
         "etype": null
       },
       {
