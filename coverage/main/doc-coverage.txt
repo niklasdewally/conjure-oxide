@@ -15,9 +15,15 @@
 +-------------------------------------+------------+------------+------------+------------+
 | File                                | Documented | Percentage |   Examples | Percentage |
 +-------------------------------------+------------+------------+------------+------------+
-| solvers/kissat/src/lib.rs           |          0 |       0.0% |          0 |       0.0% |
+| conjure_oxide/src/find_conjure.rs   |          1 |      50.0% |          0 |       0.0% |
+| conjure_oxide/src/lib.rs            |          0 |       0.0% |          0 |       0.0% |
+| conjure_oxide/src/utils/conjure.rs  |          0 |       0.0% |          0 |       0.0% |
+| conjure_oxide/src/utils/json.rs     |          2 |      66.7% |          0 |       0.0% |
+| conjure_oxide/src/utils/misc.rs     |          0 |       0.0% |          0 |       0.0% |
+| conjure_oxide/src/utils/mod.rs      |          0 |       0.0% |          0 |       0.0% |
+| conjure_oxide/src/utils/testing.rs  |          0 |       0.0% |          0 |       0.0% |
 +-------------------------------------+------------+------------+------------+------------+
-| Total                               |          0 |       0.0% |          0 |       0.0% |
+| Total                               |          3 |      12.0% |          0 |       0.0% |
 +-------------------------------------+------------+------------+------------+------------+
 +-------------------------------------+------------+------------+------------+------------+
 | File                                | Documented | Percentage |   Examples | Percentage |
@@ -70,15 +76,9 @@
 +-------------------------------------+------------+------------+------------+------------+
 | File                                | Documented | Percentage |   Examples | Percentage |
 +-------------------------------------+------------+------------+------------+------------+
-| conjure_oxide/src/find_conjure.rs   |          1 |      50.0% |          0 |       0.0% |
-| conjure_oxide/src/lib.rs            |          0 |       0.0% |          0 |       0.0% |
-| conjure_oxide/src/utils/conjure.rs  |          0 |       0.0% |          0 |       0.0% |
-| conjure_oxide/src/utils/json.rs     |          2 |      66.7% |          0 |       0.0% |
-| conjure_oxide/src/utils/misc.rs     |          0 |       0.0% |          0 |       0.0% |
-| conjure_oxide/src/utils/mod.rs      |          0 |       0.0% |          0 |       0.0% |
-| conjure_oxide/src/utils/testing.rs  |          0 |       0.0% |          0 |       0.0% |
+| solvers/kissat/src/lib.rs           |          0 |       0.0% |          0 |       0.0% |
 +-------------------------------------+------------+------------+------------+------------+
-| Total                               |          3 |      12.0% |          0 |       0.0% |
+| Total                               |          0 |       0.0% |          0 |       0.0% |
 +-------------------------------------+------------+------------+------------+------------+
 +-------------------------------------+------------+------------+------------+------------+
 | File                                | Documented | Percentage |   Examples | Percentage |
