@@ -520,8 +520,7 @@
 <a href="#519" id="519">519</a>
 <a href="#520" id="520">520</a>
 <a href="#521" id="521">521</a>
-<a href="#522" id="522">522</a>
-<a href="#523" id="523">523</a></pre></div><pre class="rust"><code><span class="kw">use </span>std::fmt::{Display, Formatter};
+<a href="#522" id="522">522</a></pre></div><pre class="rust"><code><span class="kw">use </span>std::fmt::{Display, Formatter};
 
 <span class="kw">use </span>serde::{Deserialize, Serialize};
 
@@ -544,7 +543,6 @@
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize, Uniplate)]
 #[uniplate(walk_into=[]</span>)]
 <span class="attr">#[biplate(to=Constant)]
-#[non_exhaustive]
 </span><span class="kw">pub enum </span>Expression {
     <span class="doccomment">/**
      * Represents an empty expression
