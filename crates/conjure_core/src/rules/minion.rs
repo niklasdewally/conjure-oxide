@@ -2,6 +2,10 @@
 /*        Rules for translating to Minion-supported constraints         */
 /************************************************************************/
 
+use std::borrow::BorrowMut;
+use std::cell::RefCell;
+use std::sync::Arc;
+
 use crate::ast::{Constant as Const, DecisionVariable, Domain, Expression as Expr, SymbolTable};
 use crate::metadata::Metadata;
 use crate::rule_engine::{
@@ -10,7 +14,7 @@ use crate::rule_engine::{
 
 use crate::solver::SolverFamily;
 use crate::{bug, Model};
-use itertools::Itertools;
+use itertools::{all, Itertools};
 use uniplate::Uniplate;
 use ApplicationError::RuleNotApplicable;
 
@@ -64,7 +68,7 @@ fn sum_to_vector(expr: &Expr) -> Result<Vec<Expr>, ApplicationError> {
 #[register_rule(("Minion", 4400))]
 fn flatten_binops(expr: &Expr, m: &Model) -> ApplicationResult {
     use Expr::*;
-    if !matches!(expr, SafeDiv(_, _, _)) {
+    if !matches!(expr, SafeDiv(_, _, _)|Neq(_,_,_)) {
         return Err(RuleNotApplicable);
     }
 
@@ -97,6 +101,92 @@ fn flatten_binops(expr: &Expr, m: &Model) -> ApplicationResult {
     };
 
     let new_expr = expr.with_children(vec![a, b].into_iter().collect());
+    Ok(Reduction::new(new_expr, new_top, m1.variables))
+}
+
+// /// Flatten eq and neq.
+// ///
+// /// ```text
+// ///
+// /// ```
+// ///
+// /// To prevent infinite loops, we only flatten one side of an equality.
+// ///
+// /// For example, if we used `flatten_binops`:
+// ///
+// /// ```text
+// /// a/(b+c) = d+e ~[flatten_binops]~> a/x = d+e , x = b+c
+// ///
+// /// x= b+c ~[flatten_binops]~> x = y, y = b+c
+// /// y= b+c ~[flatten_binops]~> y = z, z = b+c
+// /// ... etc ad infinitum
+// /// ```
+// #[register_rule(("Minion", 4400))]
+// fn flatten_eq(expr: &Expr, m: &Model) -> ApplicationResult {
+//     use Expr::*;
+//     if !matches!(expr, Eq(_, _, _)) {
+//         return Err(RuleNotApplicable);
+//     };
+
+//     let children = expr.children();
+//     let mut lhs: Expr;
+//     let mut rhs: Expr;
+//     if is_flattened(&children[0]) || is_flattened(&children[1]) {
+//         return Err(RuleNotApplicable);
+//     }
+
+//     let mut lhs = children[0].clone();
+//     let mut rhs = children[1].clone();
+
+//     let mut m1 = m.clone();
+
+//     let Some((new_top,lhs)) = expr_to_aux_var(&lhs, &mut m1) else {
+//         return Err(RuleNotApplicable);
+//     };
+
+//     let new_expr = Eq(expr.get_meta().clone_dirty(),Box::new(lhs),Box::new(rhs));
+
+//     Ok(Reduction::new(new_expr,new_top,m1.variables))
+// }
+
+#[allow(clippy::arc_with_non_send_sync)]
+#[register_rule(("Minion", 4400))]
+fn flatten_vecops(expr: &Expr, m: &Model) -> ApplicationResult {
+    use Expr::*;
+    if !matches!(
+        expr,
+        SumEq(_, _, _) | SumLeq(_, _, _) | SumGeq(_, _, _) 
+    ) {
+        return Err(RuleNotApplicable);
+    }
+
+    let m1 = Arc::new(RefCell::new(m.clone()));
+    let top_level_constraints: Arc<RefCell<Vec<Expr>>> = Arc::new(RefCell::new(vec![]));
+
+    let p_m1 = m1.clone();
+    let p_top_level_constraints: Arc<RefCell<Vec<Expr>>> = top_level_constraints.clone();
+
+    let new_expr = expr.descend(Arc::new(move |e| {
+        if let Some((e1, toplvl)) = expr_to_aux_var(&e, &mut (*p_m1).borrow_mut()) {
+            (*p_top_level_constraints).borrow_mut().push(toplvl);
+            e1
+        } else {
+            e
+        }
+    }));
+
+    let m1 = (*m1).borrow_mut().clone();
+
+    let top_level_constraints = (*top_level_constraints).borrow_mut().clone();
+
+    let new_top = match top_level_constraints.as_slice() {
+        [] => {
+            return Err(RuleNotApplicable);
+        } // no change to expr
+        [a] => a.clone(),
+        [_, _] => Expr::And(Metadata::new(), top_level_constraints),
+        _ => unreachable!(),
+    };
     Ok(Reduction::new(new_expr, new_top, m1.variables))
 }
 
@@ -456,26 +546,26 @@ fn negated_neq_to_eq(expr: &Expr, _: &Model) -> ApplicationResult {
     }
 }
 
-#[register_rule(("Minion", 4200))]
-fn negated_eq_to_neq(expr: &Expr, _: &Model) -> ApplicationResult {
-    match expr {
-        Expr::Not(_, a) => match a.as_ref() {
-            Expr::Eq(_, b, c) => {
-                if !b.can_be_undefined() && !c.can_be_undefined() {
-                    Ok(Reduction::pure(Expr::Neq(
-                        Metadata::new(),
-                        b.clone(),
-                        c.clone(),
-                    )))
-                } else {
-                    Err(ApplicationError::RuleNotApplicable)
-                }
-            }
-            _ => Err(ApplicationError::RuleNotApplicable),
-        },
-        _ => Err(ApplicationError::RuleNotApplicable),
-    }
-}
+// #[register_rule(("Minion", 4200))]
+// fn negated_eq_to_neq(expr: &Expr, _: &Model) -> ApplicationResult {
+//     match expr {
+//         Expr::Not(_, a) => match a.as_ref() {
+//             Expr::Eq(_, b, c) => {
+//                 if !b.can_be_undefined() && !c.can_be_undefined() {
+//                     Ok(Reduction::pure(Expr::Neq(
+//                         Metadata::new(),
+//                         b.clone(),
+//                         c.clone(),
+//                     )))
+//                 } else {
+//                     Err(ApplicationError::RuleNotApplicable)
+//                 }
+//             }
+//             _ => Err(ApplicationError::RuleNotApplicable),
+//         },
+//         _ => Err(ApplicationError::RuleNotApplicable),
+//     }
+// }
 
 /// Flattening rule that converts boolean variables to watched-literal constraints.
 ///
@@ -589,3 +679,27 @@ fn not_constraint_to_reify(expr: &Expr, _: &Model) -> ApplicationResult {
         Box::new(Constant(Metadata::new(), Const::Bool(false))),
     )))
 }
+
+// /// `neq(a,b) ~> not(eq(a,b))`
+// ///
+// /// This rule is a fallback to cover cases where rules exist for eq(a) but not neq(a).
+// ///
+// /// For example, we have the rule `eq(sum(a),b) ~> sumeq(a,b)`.
+// /// There is no point adding neq to this, as it would just be the same as we do here!
+// #[register_rule(("Minion", 4100))]
+// fn neq_to_not_eq(expr: &Expr, _: &Model) -> ApplicationResult {
+//     use Expr::*;
+//     let Neq(metadata, a, b) = expr else {
+//         return Err(RuleNotApplicable);
+//     };
+
+//     // use diseq instead
+//     if is_flattened(expr) {
+//         return Err(RuleNotApplicable);
+//     }
+
+//     Ok(Reduction::pure(Not(
+//         metadata.clone_dirty(),
+//         Box::new(Eq(Metadata::new(), a.clone(), b.clone())),
+//     )))
+// }

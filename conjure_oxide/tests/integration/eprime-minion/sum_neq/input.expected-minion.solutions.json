@@ -1,0 +1,32 @@
+[
+  {
+    "MachineName(0)": 3,
+    "UserName(x)": 1,
+    "UserName(y)": 1,
+    "UserName(z)": 1
+  },
+  {
+    "MachineName(0)": 4,
+    "UserName(x)": 1,
+    "UserName(y)": 1,
+    "UserName(z)": 2
+  },
+  {
+    "MachineName(0)": 4,
+    "UserName(x)": 1,
+    "UserName(y)": 2,
+    "UserName(z)": 1
+  },
+  {
+    "MachineName(0)": 4,
+    "UserName(x)": 2,
+    "UserName(y)": 1,
+    "UserName(z)": 1
+  },
+  {
+    "MachineName(0)": 6,
+    "UserName(x)": 2,
+    "UserName(y)": 2,
+    "UserName(z)": 2
+  }
+]

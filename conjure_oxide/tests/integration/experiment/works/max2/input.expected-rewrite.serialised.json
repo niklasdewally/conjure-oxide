@@ -104,7 +104,7 @@
                     "etype": null
                   },
                   {
-                    "MachineName": 2
+                    "MachineName": 1
                   }
                 ]
               },
@@ -286,6 +286,36 @@
           ]
         },
         {
+          "Eq": [
+            {
+              "clean": false,
+              "etype": null
+            },
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "MachineName": 1
+                }
+              ]
+            },
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "MachineName": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
           "Ineq": [
             {
               "clean": false,
@@ -418,158 +448,6 @@
                       },
                       {
                         "MachineName": 1
-                      }
-                    ]
-                  },
-                  {
-                    "Reference": [
-                      {
-                        "clean": false,
-                        "etype": null
-                      },
-                      {
-                        "UserName": "b"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          ]
-        },
-        {
-          "Ineq": [
-            {
-              "clean": false,
-              "etype": null
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "UserName": "a"
-                }
-              ]
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "MachineName": 2
-                }
-              ]
-            },
-            {
-              "Constant": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "Int": 0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Ineq": [
-            {
-              "clean": false,
-              "etype": null
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "UserName": "b"
-                }
-              ]
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "MachineName": 2
-                }
-              ]
-            },
-            {
-              "Constant": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "Int": 0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Or": [
-            {
-              "clean": false,
-              "etype": null
-            },
-            [
-              {
-                "Eq": [
-                  {
-                    "clean": false,
-                    "etype": null
-                  },
-                  {
-                    "Reference": [
-                      {
-                        "clean": false,
-                        "etype": null
-                      },
-                      {
-                        "MachineName": 2
-                      }
-                    ]
-                  },
-                  {
-                    "Reference": [
-                      {
-                        "clean": false,
-                        "etype": null
-                      },
-                      {
-                        "UserName": "a"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "Eq": [
-                  {
-                    "clean": false,
-                    "etype": null
-                  },
-                  {
-                    "Reference": [
-                      {
-                        "clean": false,
-                        "etype": null
-                      },
-                      {
-                        "MachineName": 2
                       }
                     ]
                   },
@@ -592,7 +470,7 @@
       ]
     ]
   },
-  "next_var": 3,
+  "next_var": 2,
   "variables": [
     [
       {
@@ -614,23 +492,6 @@
     [
       {
         "MachineName": 1
-      },
-      {
-        "domain": {
-          "IntDomain": [
-            {
-              "Bounded": [
-                1,
-                4
-              ]
-            }
-          ]
-        }
-      }
-    ],
-    [
-      {
-        "MachineName": 2
       },
       {
         "domain": {

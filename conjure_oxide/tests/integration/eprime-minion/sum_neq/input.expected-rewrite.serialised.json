@@ -19,78 +19,7 @@
                   "etype": null
                 },
                 {
-                  "UserName": "a"
-                }
-              ]
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
                   "MachineName": 0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "DivEq": [
-            {
-              "clean": false,
-              "etype": null
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "UserName": "b"
-                }
-              ]
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "UserName": "c"
-                }
-              ]
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "MachineName": 0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Neq": [
-            {
-              "clean": false,
-              "etype": null
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "UserName": "c"
                 }
               ]
             },
@@ -101,7 +30,115 @@
                   "etype": null
                 },
                 {
-                  "Int": 0
+                  "Int": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "SumGeq": [
+            {
+              "clean": false,
+              "etype": null
+            },
+            [
+              {
+                "Reference": [
+                  {
+                    "clean": false,
+                    "etype": null
+                  },
+                  {
+                    "UserName": "x"
+                  }
+                ]
+              },
+              {
+                "Reference": [
+                  {
+                    "clean": false,
+                    "etype": null
+                  },
+                  {
+                    "UserName": "y"
+                  }
+                ]
+              },
+              {
+                "Reference": [
+                  {
+                    "clean": false,
+                    "etype": null
+                  },
+                  {
+                    "UserName": "z"
+                  }
+                ]
+              }
+            ],
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "MachineName": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "SumLeq": [
+            {
+              "clean": false,
+              "etype": null
+            },
+            [
+              {
+                "Reference": [
+                  {
+                    "clean": false,
+                    "etype": null
+                  },
+                  {
+                    "UserName": "x"
+                  }
+                ]
+              },
+              {
+                "Reference": [
+                  {
+                    "clean": false,
+                    "etype": null
+                  },
+                  {
+                    "UserName": "y"
+                  }
+                ]
+              },
+              {
+                "Reference": [
+                  {
+                    "clean": false,
+                    "etype": null
+                  },
+                  {
+                    "UserName": "z"
+                  }
+                ]
+              }
+            ],
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "MachineName": 0
                 }
               ]
             }
@@ -121,8 +158,8 @@
           "IntDomain": [
             {
               "Bounded": [
-                0,
-                3
+                3,
+                6
               ]
             }
           ]
@@ -131,15 +168,15 @@
     ],
     [
       {
-        "UserName": "a"
+        "UserName": "x"
       },
       {
         "domain": {
           "IntDomain": [
             {
               "Bounded": [
-                0,
-                3
+                1,
+                2
               ]
             }
           ]
@@ -148,15 +185,15 @@
     ],
     [
       {
-        "UserName": "b"
+        "UserName": "y"
       },
       {
         "domain": {
           "IntDomain": [
             {
               "Bounded": [
-                0,
-                3
+                1,
+                2
               ]
             }
           ]
@@ -165,15 +202,15 @@
     ],
     [
       {
-        "UserName": "c"
+        "UserName": "z"
       },
       {
         "domain": {
           "IntDomain": [
             {
               "Bounded": [
-                0,
-                3
+                1,
+                2
               ]
             }
           ]

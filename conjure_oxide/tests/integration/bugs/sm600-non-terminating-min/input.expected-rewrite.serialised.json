@@ -39,6 +39,36 @@
           ]
         },
         {
+          "Eq": [
+            {
+              "clean": false,
+              "etype": null
+            },
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "MachineName": 0
+                }
+              ]
+            },
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "MachineName": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
           "Ineq": [
             {
               "clean": false,

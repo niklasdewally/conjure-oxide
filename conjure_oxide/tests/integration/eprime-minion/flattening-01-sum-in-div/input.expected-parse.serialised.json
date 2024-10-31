@@ -1,0 +1,280 @@
+{
+  "constraints": {
+    "Eq": [
+      {
+        "clean": false,
+        "etype": null
+      },
+      {
+        "UnsafeDiv": [
+          {
+            "clean": false,
+            "etype": null
+          },
+          {
+            "Sum": [
+              {
+                "clean": false,
+                "etype": null
+              },
+              [
+                {
+                  "Sum": [
+                    {
+                      "clean": false,
+                      "etype": null
+                    },
+                    [
+                      {
+                        "Reference": [
+                          {
+                            "clean": false,
+                            "etype": null
+                          },
+                          {
+                            "UserName": "x"
+                          }
+                        ]
+                      },
+                      {
+                        "Reference": [
+                          {
+                            "clean": false,
+                            "etype": null
+                          },
+                          {
+                            "UserName": "y"
+                          }
+                        ]
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "Reference": [
+                    {
+                      "clean": false,
+                      "etype": null
+                    },
+                    {
+                      "UserName": "z"
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "Sum": [
+              {
+                "clean": false,
+                "etype": null
+              },
+              [
+                {
+                  "Sum": [
+                    {
+                      "clean": false,
+                      "etype": null
+                    },
+                    [
+                      {
+                        "Reference": [
+                          {
+                            "clean": false,
+                            "etype": null
+                          },
+                          {
+                            "UserName": "x"
+                          }
+                        ]
+                      },
+                      {
+                        "UnsafeDiv": [
+                          {
+                            "clean": false,
+                            "etype": null
+                          },
+                          {
+                            "Reference": [
+                              {
+                                "clean": false,
+                                "etype": null
+                              },
+                              {
+                                "UserName": "a"
+                              }
+                            ]
+                          },
+                          {
+                            "Sum": [
+                              {
+                                "clean": false,
+                                "etype": null
+                              },
+                              [
+                                {
+                                  "Reference": [
+                                    {
+                                      "clean": false,
+                                      "etype": null
+                                    },
+                                    {
+                                      "UserName": "b"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Reference": [
+                                    {
+                                      "clean": false,
+                                      "etype": null
+                                    },
+                                    {
+                                      "UserName": "c"
+                                    }
+                                  ]
+                                }
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "Reference": [
+                    {
+                      "clean": false,
+                      "etype": null
+                    },
+                    {
+                      "UserName": "c"
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "Constant": [
+          {
+            "clean": false,
+            "etype": null
+          },
+          {
+            "Int": 5
+          }
+        ]
+      }
+    ]
+  },
+  "next_var": 0,
+  "variables": [
+    [
+      {
+        "UserName": "a"
+      },
+      {
+        "domain": {
+          "IntDomain": [
+            {
+              "Bounded": [
+                2,
+                6
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "UserName": "b"
+      },
+      {
+        "domain": {
+          "IntDomain": [
+            {
+              "Bounded": [
+                1,
+                4
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "UserName": "c"
+      },
+      {
+        "domain": {
+          "IntDomain": [
+            {
+              "Bounded": [
+                1,
+                3
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "UserName": "x"
+      },
+      {
+        "domain": {
+          "IntDomain": [
+            {
+              "Bounded": [
+                4,
+                7
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "UserName": "y"
+      },
+      {
+        "domain": {
+          "IntDomain": [
+            {
+              "Bounded": [
+                6,
+                8
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "UserName": "z"
+      },
+      {
+        "domain": {
+          "IntDomain": [
+            {
+              "Bounded": [
+                6,
+                13
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  ]
+}

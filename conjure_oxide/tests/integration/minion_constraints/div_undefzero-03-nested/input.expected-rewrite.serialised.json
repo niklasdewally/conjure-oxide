@@ -48,49 +48,19 @@
           ]
         },
         {
-          "Reify": [
+          "Neq": [
             {
               "clean": false,
               "etype": null
             },
             {
-              "DivEq": [
+              "Reference": [
                 {
                   "clean": false,
                   "etype": null
                 },
                 {
-                  "Reference": [
-                    {
-                      "clean": false,
-                      "etype": null
-                    },
-                    {
-                      "UserName": "y"
-                    }
-                  ]
-                },
-                {
-                  "Reference": [
-                    {
-                      "clean": false,
-                      "etype": null
-                    },
-                    {
-                      "UserName": "z"
-                    }
-                  ]
-                },
-                {
-                  "Constant": [
-                    {
-                      "clean": false,
-                      "etype": null
-                    },
-                    {
-                      "Int": 0
-                    }
-                  ]
+                  "MachineName": 0
                 }
               ]
             },
@@ -101,7 +71,48 @@
                   "etype": null
                 },
                 {
-                  "Bool": false
+                  "Int": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "DivEq": [
+            {
+              "clean": false,
+              "etype": null
+            },
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "UserName": "y"
+                }
+              ]
+            },
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "UserName": "z"
+                }
+              ]
+            },
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "MachineName": 0
                 }
               ]
             }
