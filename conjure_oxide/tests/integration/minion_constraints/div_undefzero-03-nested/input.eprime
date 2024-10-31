@@ -1,0 +1,7 @@
+language ESSENCE' 1.0
+
+find x : int(5..20)
+find y : int(3..5)
+find z : int(4..6)
+
+such that x / (y/z) = 10
