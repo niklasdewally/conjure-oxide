@@ -24,7 +24,37 @@
               ]
             },
             {
-              "SafeDiv": [
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "MachineName": 0
+                }
+              ]
+            },
+            {
+              "Constant": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "Int": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Reify": [
+            {
+              "clean": false,
+              "etype": null
+            },
+            {
+              "DivEq": [
                 {
                   "clean": false,
                   "etype": null
@@ -50,6 +80,17 @@
                       "UserName": "z"
                     }
                   ]
+                },
+                {
+                  "Constant": [
+                    {
+                      "clean": false,
+                      "etype": null
+                    },
+                    {
+                      "Int": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -60,67 +101,7 @@
                   "etype": null
                 },
                 {
-                  "Int": 10
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Neq": [
-            {
-              "clean": false,
-              "etype": null
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "UserName": "z"
-                }
-              ]
-            },
-            {
-              "Constant": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "Int": 0
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "Neq": [
-            {
-              "clean": false,
-              "etype": null
-            },
-            {
-              "Reference": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "MachineName": 1
-                }
-              ]
-            },
-            {
-              "Constant": [
-                {
-                  "clean": false,
-                  "etype": null
-                },
-                {
-                  "Int": 0
+                  "Bool": false
                 }
               ]
             }
@@ -191,7 +172,37 @@
                   "etype": null
                 },
                 {
-                  "MachineName": 1
+                  "MachineName": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Neq": [
+            {
+              "clean": false,
+              "etype": null
+            },
+            {
+              "Reference": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "UserName": "z"
+                }
+              ]
+            },
+            {
+              "Constant": [
+                {
+                  "clean": false,
+                  "etype": null
+                },
+                {
+                  "Int": 0
                 }
               ]
             }
@@ -200,11 +211,11 @@
       ]
     ]
   },
-  "next_var": 2,
+  "next_var": 0,
   "variables": [
     [
       {
-        "MachineName": 1
+        "MachineName": 0
       },
       {
         "domain": {
