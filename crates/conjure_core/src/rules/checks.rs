@@ -16,3 +16,21 @@ pub fn is_all_constant(expression: &Expression) -> bool {
 
     true
 }
+
+/// True iff the expression is a constant or a reference.
+pub fn is_leaf(expression: &Expression) -> bool {
+    matches!(
+        expression,
+        Expression::Constant(_, _) | Expression::Reference(_, _)
+    )
+}
+
+/// True iff the expression contains no nested sub-expressions.
+pub fn is_flat(expr: &Expression) -> bool {
+    for e in expr.children() {
+        if !is_leaf(&e) {
+            return false;
+        }
+    }
+    true
+}
