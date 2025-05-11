@@ -3513,11 +3513,11 @@ DA:35,0
 DA:42,0
 DA:43,0
 DA:44,0
-DA:48,2176536
-DA:49,2176536
-DA:50,612024
-DA:51,1564512
-DA:53,2176536
+DA:48,2088384
+DA:49,2088384
+DA:50,589032
+DA:51,1499352
+DA:53,2088384
 DA:63,0
 DA:64,0
 DA:65,0
@@ -5921,12 +5921,12 @@ DA:184,13008
 DA:188,0
 DA:189,0
 DA:190,0
-DA:194,696
-DA:195,696
-DA:196,696
-DA:202,25848
-DA:203,25848
-DA:204,25848
+DA:194,816
+DA:195,816
+DA:196,816
+DA:202,23472
+DA:203,23472
+DA:204,23472
 DA:208,0
 DA:209,0
 DA:210,0
@@ -6074,10 +6074,10 @@ DA:55,0
 DA:56,0
 DA:60,13872
 DA:61,13872
-DA:63,576
-DA:64,576
-DA:69,576
-DA:71,13296
+DA:63,552
+DA:64,552
+DA:69,552
+DA:71,13320
 DA:73,13872
 DA:78,13824
 DA:79,13824
@@ -6091,22 +6091,22 @@ DA:96,3504
 DA:97,3504
 DA:98,3504
 DA:99,3504
-DA:102,576
-DA:103,576
-DA:105,48960
-DA:106,48960
-DA:107,48960
-DA:109,85224
-DA:110,48960
-DA:111,12696
-DA:112,12696
-DA:113,12696
-DA:114,36264
-DA:117,48960
-DA:118,12696
-DA:119,36264
-DA:122,576
-DA:123,576
+DA:102,552
+DA:103,552
+DA:105,46920
+DA:106,46920
+DA:107,46920
+DA:109,82272
+DA:110,46920
+DA:111,11568
+DA:112,11568
+DA:113,11568
+DA:114,35352
+DA:117,46920
+DA:118,11568
+DA:119,35352
+DA:122,552
+DA:123,552
 DA:127,768
 DA:128,768
 DA:130,1032
@@ -6122,9 +6122,9 @@ DA:142,264
 DA:143,264
 DA:148,768
 DA:149,768
-DA:153,7008
-DA:154,7008
-DA:155,7008
+DA:153,10200
+DA:154,10200
+DA:155,10200
 DA:161,51864
 DA:162,51864
 DA:163,51864
@@ -7037,9 +7037,9 @@ DA:566,46392
 DA:567,46392
 DA:569,264
 DA:570,46392
-DA:571,259608
+DA:571,256512
 DA:572,8928
-DA:574,61944
+DA:574,62064
 DA:575,6288
 DA:577,3360
 DA:578,528
@@ -7732,19 +7732,19 @@ FN:230,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_229_0
 FN:245,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_229_0::rule_eval_add
 FN:45,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_44_0
 FN:256,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_255_0
-FN:90,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_77_0::rule_expand_sqr
+FN:25,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_24_0
 FN:114,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_101_0::rule_eval_add
 FN:216,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_200_0::rule_eval_add
-FN:25,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_24_0
+FN:90,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_77_0::rule_expand_sqr
 FN:194,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_168_0::rule_expand_sqr
 FN:414,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_389_0::rule_eval_mul
 FN:271,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_255_0::rule_eval_add
 FN:66,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_44_0::rule_eval_mul
 FN:184,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_168_0::rule_eval_add
-FN:78,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_77_0
+FN:340,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_324_0::rule_eval_add
 FN:390,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_389_0
 FN:349,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_324_0::rule_eval_mul
-FN:340,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_324_0::rule_eval_add
+FN:78,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_77_0
 FN:123,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_101_0::rule_eval_mul
 FN:189,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_168_0::rule_eval_mul
 FN:280,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_255_0::rule_eval_mul
@@ -7765,19 +7765,19 @@ FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_229_0
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_229_0::rule_eval_add
 FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_44_0
 FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_255_0
-FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_77_0::rule_expand_sqr
+FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_24_0
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_101_0::rule_eval_add
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_200_0::rule_eval_add
-FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_24_0
+FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_77_0::rule_expand_sqr
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_168_0::rule_expand_sqr
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_389_0::rule_eval_mul
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_255_0::rule_eval_add
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_44_0::rule_eval_mul
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_168_0::rule_eval_add
-FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_77_0
+FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_324_0::rule_eval_add
 FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_389_0
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_324_0::rule_eval_mul
-FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_324_0::rule_eval_add
+FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_77_0
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_101_0::rule_eval_mul
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_168_0::rule_eval_mul
 FNDA:0,rust_out::main::_doctest_main_crates_tree_morph_src_lib_rs_255_0::rule_eval_mul
@@ -11857,8 +11857,8 @@ FN:353,tree_morph::engine::morph_impl::<enum_rules::Expr, enum_rules::Meta, tree
 FN:307,<tree_morph::engine::DirtyZipper<dirty_clean::Expr>>::mark_dirty
 FN:353,tree_morph::engine::morph_impl::<dirty_clean::Expr, dirty_clean::Meta, tree_morph::engine::morph<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>::{closure#0}::{closure#0}>
 FN:222,<tree_morph::engine::State as core::default::Default>::default
-FN:222,<tree_morph::engine::State as core::default::Default>::default
 FN:121,tree_morph::engine::morph::<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>, tree_morph::helpers::select_first<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>>>::{closure#0}
+FN:222,<tree_morph::engine::State as core::default::Default>::default
 FN:156,<tree_morph::engine::State>::mark_cleanliness
 FN:122,tree_morph::engine::morph::<_, _, _, _>::{closure#0}::{closure#0}
 FN:122,tree_morph::engine::morph::<_, _, _, _>::{closure#0}::{closure#0}
@@ -11901,9 +11901,9 @@ FN:121,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut
 FN:307,<tree_morph::engine::DirtyZipper<_>>::mark_dirty
 FN:122,tree_morph::engine::morph::<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule, tree_morph::helpers::select_first<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule>>::{closure#0}::{closure#0}
 FN:177,<tree_morph::engine::State>::go_down
+FN:353,tree_morph::engine::morph_impl::<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, tree_morph::engine::morph<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>, tree_morph::helpers::select_first<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>>>::{closure#0}::{closure#0}>
 FN:122,tree_morph::engine::morph::<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, i32>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, &'c i32) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr>, tree_morph::helpers::select_panic<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, i32>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, &'c i32) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr>>>::{closure#0}::{closure#0}
 FN:307,<tree_morph::engine::DirtyZipper<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr>>::mark_dirty
-FN:353,tree_morph::engine::morph_impl::<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, tree_morph::engine::morph<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>, tree_morph::helpers::select_first<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>>>::{closure#0}::{closure#0}>
 FN:253,<tree_morph::engine::NodeState>::fmt_children
 FN:307,<tree_morph::engine::DirtyZipper<lambda_calc::Expr>>::mark_dirty
 FN:121,tree_morph::engine::morph::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>::{closure#0}
@@ -12007,8 +12007,8 @@ FNDA:1,tree_morph::engine::morph_impl::<enum_rules::Expr, enum_rules::Meta, tree
 FNDA:1,<tree_morph::engine::DirtyZipper<dirty_clean::Expr>>::mark_dirty
 FNDA:1,tree_morph::engine::morph_impl::<dirty_clean::Expr, dirty_clean::Meta, tree_morph::engine::morph<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule, tree_morph::helpers::select_first<dirty_clean::Expr, dirty_clean::Meta, dirty_clean::MyRule>>::{closure#0}::{closure#0}>
 FNDA:0,<tree_morph::engine::State as core::default::Default>::default
-FNDA:0,<tree_morph::engine::State as core::default::Default>::default
 FNDA:1,tree_morph::engine::morph::<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>, tree_morph::helpers::select_first<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>>>::{closure#0}
+FNDA:0,<tree_morph::engine::State as core::default::Default>::default
 FNDA:0,<tree_morph::engine::State>::mark_cleanliness
 FNDA:0,tree_morph::engine::morph::<_, _, _, _>::{closure#0}::{closure#0}
 FNDA:0,tree_morph::engine::morph::<_, _, _, _>::{closure#0}::{closure#0}
@@ -12051,9 +12051,9 @@ FNDA:1,tree_morph::engine::morph::<shapes::Shape, (), for<'a, 'b, 'c> fn(&'a mut
 FNDA:0,<tree_morph::engine::DirtyZipper<_>>::mark_dirty
 FNDA:1,tree_morph::engine::morph::<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule, tree_morph::helpers::select_first<enum_rules::Expr, enum_rules::Meta, enum_rules::MyRule>>::{closure#0}::{closure#0}
 FNDA:0,<tree_morph::engine::State>::go_down
+FNDA:1,tree_morph::engine::morph_impl::<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, tree_morph::engine::morph<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>, tree_morph::helpers::select_first<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>>>::{closure#0}::{closure#0}>
 FNDA:1,tree_morph::engine::morph::<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, i32>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, &'c i32) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr>, tree_morph::helpers::select_panic<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, i32, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, i32>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr, &'c i32) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr>>>::{closure#0}::{closure#0}
 FNDA:1,<tree_morph::engine::DirtyZipper<rust_out::main::_doctest_main_crates_tree_morph_src_engine_rs_41_0::Expr>>::mark_dirty
-FNDA:1,tree_morph::engine::morph_impl::<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, tree_morph::engine::morph<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>, tree_morph::helpers::select_first<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool, for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr>>>::{closure#0}::{closure#0}>
 FNDA:0,<tree_morph::engine::NodeState>::fmt_children
 FNDA:1,<tree_morph::engine::DirtyZipper<lambda_calc::Expr>>::mark_dirty
 FNDA:1,tree_morph::engine::morph::<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce, tree_morph::helpers::select_first<lambda_calc::Expr, u32, lambda_calc::transform_beta_reduce>>::{closure#0}
@@ -13568,9 +13568,9 @@ FN:92,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main:
 FN:92,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr> as tree_morph::rule::Rule<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>>::apply
 FN:92,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply
 FN:92,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply
-FN:64,<rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_38_0::CustomRule as tree_morph::rule::Rule<rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_38_0::Term, ()>>::apply
 FN:112,rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_111_0
-FN:112,rust_out::main
+FN:64,<rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_38_0::CustomRule as tree_morph::rule::Rule<rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_38_0::Term, ()>>::apply
+FN:39,rust_out::main
 FN:92,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape> as tree_morph::rule::Rule<shapes::Shape, ()>>::apply
 FN:120,rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_111_0::rule_a
 FN:39,rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_38_0
@@ -13585,8 +13585,8 @@ FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>, &'b rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, &'c bool) -> core::option::Option<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr> as tree_morph::rule::Rule<rust_out::main::_doctest_main_crates_tree_morph_src_commands_rs_28_0::Expr, bool>>::apply
 FNDA:1,<lambda_calc::transform_beta_reduce as tree_morph::rule::Rule<lambda_calc::Expr, u32>>::apply
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<mixed_fn_rules::Expr, ()>, &'b mixed_fn_rules::Expr, &'c ()) -> core::option::Option<mixed_fn_rules::Expr> as tree_morph::rule::Rule<mixed_fn_rules::Expr, ()>>::apply
-FNDA:1,<rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_38_0::CustomRule as tree_morph::rule::Rule<rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_38_0::Term, ()>>::apply
 FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_111_0
+FNDA:1,<rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_38_0::CustomRule as tree_morph::rule::Rule<rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_38_0::Term, ()>>::apply
 FNDA:1,rust_out::main
 FNDA:1,<for<'a, 'b, 'c> fn(&'a mut tree_morph::commands::Commands<shapes::Shape, ()>, &'b shapes::Shape, &'c ()) -> core::option::Option<shapes::Shape> as tree_morph::rule::Rule<shapes::Shape, ()>>::apply
 FNDA:1,rust_out::main::_doctest_main_crates_tree_morph_src_rule_rs_111_0::rule_a
@@ -15153,16 +15153,16 @@ BRH:0
 DA:21,48
 DA:23,48
 DA:24,48
-DA:27,314280
-DA:28,314280
-DA:29,314280
-DA:30,270144
-DA:31,270144
-DA:32,270144
+DA:27,313272
+DA:28,313272
+DA:29,313272
+DA:30,269136
+DA:31,269136
+DA:32,269136
 DA:33,3984
 DA:35,24
 DA:36,24
-DA:37,314256
+DA:37,313248
 DA:43,48
 DA:44,24
 DA:45,24
@@ -17997,9 +17997,9 @@ FN:165,conjure_core::rule_engine::get_rule_by_name
 FN:195,conjure_core::rule_engine::get_all_rule_sets
 FN:238,conjure_core::rule_engine::get_rule_sets_for_solver_family
 FN:168,conjure_core::rule_engine::get_rule_by_name::{closure#0}
-FN:195,conjure_core::rule_engine::get_all_rule_sets
-FN:137,conjure_core::rule_engine::get_all_rules
 FN:62,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_61_0
+FN:137,conjure_core::rule_engine::get_all_rules
+FN:195,conjure_core::rule_engine::get_all_rule_sets
 FN:137,conjure_core::rule_engine::get_all_rules
 FN:165,conjure_core::rule_engine::get_rule_by_name
 FN:243,conjure_core::rule_engine::get_rule_sets_for_solver_family::{closure#0}
@@ -18020,8 +18020,8 @@ FN:216,conjure_core::rule_engine::get_rule_set_by_name
 FN:69,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_68_0
 FN:216,conjure_core::rule_engine::get_rule_set_by_name
 FN:243,conjure_core::rule_engine::get_rule_sets_for_solver_family::{closure#0}
-FN:229,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_228_0
 FN:41,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_33_0::identity
+FN:229,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_228_0
 FN:216,conjure_core::rule_engine::get_rule_set_by_name
 FN:243,conjure_core::rule_engine::get_rule_sets_for_solver_family::{closure#0}
 FN:137,conjure_core::rule_engine::get_all_rules
@@ -18052,9 +18052,9 @@ FNDA:0,conjure_core::rule_engine::get_rule_by_name
 FNDA:0,conjure_core::rule_engine::get_all_rule_sets
 FNDA:0,conjure_core::rule_engine::get_rule_sets_for_solver_family
 FNDA:0,conjure_core::rule_engine::get_rule_by_name::{closure#0}
-FNDA:0,conjure_core::rule_engine::get_all_rule_sets
-FNDA:0,conjure_core::rule_engine::get_all_rules
 FNDA:1,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_61_0
+FNDA:0,conjure_core::rule_engine::get_all_rules
+FNDA:0,conjure_core::rule_engine::get_all_rule_sets
 FNDA:0,conjure_core::rule_engine::get_all_rules
 FNDA:0,conjure_core::rule_engine::get_rule_by_name
 FNDA:1,conjure_core::rule_engine::get_rule_sets_for_solver_family::{closure#0}
@@ -18075,8 +18075,8 @@ FNDA:0,conjure_core::rule_engine::get_rule_set_by_name
 FNDA:1,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_68_0
 FNDA:0,conjure_core::rule_engine::get_rule_set_by_name
 FNDA:0,conjure_core::rule_engine::get_rule_sets_for_solver_family::{closure#0}
-FNDA:1,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_228_0
 FNDA:0,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_33_0::identity
+FNDA:1,rust_out::main::_doctest_main_crates_conjure_core_src_rule_engine_mod_rs_228_0
 FNDA:1,conjure_core::rule_engine::get_rule_set_by_name
 FNDA:0,conjure_core::rule_engine::get_rule_sets_for_solver_family::{closure#0}
 FNDA:0,conjure_core::rule_engine::get_all_rules
@@ -18101,9 +18101,9 @@ DA:126,0
 DA:128,1
 DA:129,1
 DA:130,1
-DA:137,1680
-DA:138,1680
-DA:139,1680
+DA:137,1656
+DA:138,1656
+DA:139,1656
 DA:153,0
 DA:154,0
 DA:155,0
@@ -22165,9 +22165,9 @@ DA:652,278
 DA:653,278
 DA:654,278
 DA:655,278
-DA:656,20841
-DA:657,20841
-DA:658,20841
+DA:656,20816
+DA:657,20816
+DA:658,20816
 DA:660,278
 DA:661,278
 DA:663,278
@@ -22179,7 +22179,7 @@ DA:669,278
 DA:670,278
 DA:671,278
 DA:672,278
-DA:673,20841
+DA:673,20816
 DA:675,278
 DA:676,278
 DA:679,1
