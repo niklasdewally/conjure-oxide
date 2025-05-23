@@ -19,19 +19,6 @@ name: Nightly CI
 # This ensures that there is always a build of Conjure Oxide for each platform
 # in the releases tab.
 #
-# Nightly Tests
-# =============
-#
-# In the future, this workflow will run long running CI jobs (e.g. performance
-# testing, more extensive language coverage checks).
-#
-# To add such a job, make a new job which depends on `build_nightly` (`need:
-# build_nightly`). Then, install Conjure Oxide and all its dependences using
-# the build artifacts (described below).
-#
-# Using the build artifacts saves each test from having to download/compile
-# Conjure Oxide and dependencies from scratch.
-#
 # Build Artifacts
 # ===============
 #
@@ -40,7 +27,6 @@ name: Nightly CI
 #
 # Valid values of PLATFORM are: 
 #
-#     - aarch64-linux-gnu
 #     - aarch64-darwin
 #     - x86_64-linux-gnu
 #     - x86_64-darwin
@@ -53,11 +39,7 @@ name: Nightly CI
 #   conjure, savilerow, and all solvers (as provided by conjure's with-solvers
 #   release)
 #
-# An exception to the rule is `aarch64-linux-gnu`, which only provides a
-# standalone release. This is because `conjure` does not provide a release for
-# `aarch64-linux-gnu`.
-# 
-# To download artifacts in a job, use actions/download-artifact.
+# Once all artifacts have been created, they are published together to the nightly Github release.
 
 on: 
   schedule:
@@ -67,8 +49,8 @@ on:
 permissions:
   contents: write  
 
-jobs:
 
+jobs:
   # check if anything has happened in the repo today
   #
   # https://stackoverflow.com/a/67527144
@@ -79,6 +61,7 @@ jobs:
       should_run: ${{ steps.should_run.outputs.should_run }}
     steps:
       - uses: actions/checkout@v4
+
       - name: print latest_commit
         run: echo ${{ github.sha }}
 
@@ -89,8 +72,147 @@ jobs:
         run: test -z $(git rev-list  --after="24 hours" ${{ github.sha }}) && echo "::set-output name=should_run::false" &&  gh run list -b main -w Test -L 1 --json conclusion | jq '.[].conclusion == "success"'
 
 
+  # From https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-docker-images#publishing-images-to-github-packages
+  publish_container:
+    name: Publish Container (conjure-oxide:nightly)
+    runs-on: ubuntu-latest
+    needs: check_date
+    if: ${{ needs.check_date.outputs.should_run != 'false' }}
+    env:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: ${{ github.repository }}
 
-  build_nightly:
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+
+    steps: 
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Uses the `docker/login-action` action to log in to the Container
+      # registry registry using the account and password that will publish the
+      # packages. Once published, the packages are scoped to the account
+      # defined here.
+      #
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+        # This step uses
+        # [docker/metadata-action](https://github.com/docker/metadata-action#about)
+        # to extract tags and labels that will be applied to the specified image. The
+        # `id` "meta" allows the output of this step to be referenced in a subsequent
+        # step. The `images` value provides the base name for the tags and labels.
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          flavor: | 
+            latest=false
+          tags: | 
+            nightly
+            type=sha
+
+      # This step uses the `docker/build-push-action` action to build the
+      # image, based on your repository's `Dockerfile`. If the build
+      # succeeds, it pushes the image to GitHub Packages. It uses the `context`
+      # parameter to define the build's context as the set of files located in the
+      # specified path. For more information, see
+      # [Usage](https://github.com/docker/build-push-action#usage) in the README of
+      # the `docker/build-push-action` repository. It uses the `tags` and `labels`
+      # parameters to tag and label the image with the output from the "meta" step.
+      - name: Build and push Docker image
+        id: push
+        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          provenance: false
+      
+
+  # From https://docs.github.com/en/actions/use-cases-and-examples/publishing-packages/publishing-docker-images#publishing-images-to-github-packages
+  publish_build_container:
+    name: Publish Container (conjure-oxide:build-environment-nightly)
+    runs-on: ubuntu-latest
+    needs: check_date
+    if: ${{ needs.check_date.outputs.should_run != 'false' }}
+
+    env:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: ${{ github.repository }}
+
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+
+    steps: 
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Uses the `docker/login-action` action to log in to the Container
+      # registry registry using the account and password that will publish the
+      # packages. Once published, the packages are scoped to the account
+      # defined here.
+      #
+      - name: Log in to the Container registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+        # This step uses
+        # [docker/metadata-action](https://github.com/docker/metadata-action#about)
+        # to extract tags and labels that will be applied to the specified image. The
+        # `id` "meta" allows the output of this step to be referenced in a subsequent
+        # step. The `images` value provides the base name for the tags and labels.
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          flavor: |
+            # no latest tag
+            latest=false 
+            prefix=build-environment-
+          
+          tags: |
+            nightly
+
+      # This step uses the `docker/build-push-action` action to build the
+      # image, based on your repository's `Dockerfile`. If the build
+      # succeeds, it pushes the image to GitHub Packages. It uses the `context`
+      # parameter to define the build's context as the set of files located in the
+      # specified path. For more information, see
+      # [Usage](https://github.com/docker/build-push-action#usage) in the README of
+      # the `docker/build-push-action` repository. It uses the `tags` and `labels`
+      # parameters to tag and label the image with the output from the "meta" step.
+      - name: Build and push Docker image
+        id: push
+        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+        with:
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          context: .
+          push: true
+          target: build-environment
+          provenance: false
+
+
+  build_nightly_mac:
     name: "Build Nightly (${{ matrix.arch_name }}-${{ matrix.os_name }})"
     needs: check_date
     if: ${{ needs.check_date.outputs.should_run != 'false' }}
@@ -98,23 +220,11 @@ jobs:
       fail-fast: false
       matrix:
         os: 
-          - ubuntu-24.04     # x86_64 linux
-          - ubuntu-24.04-arm # aarch64 linux 
           - macos-13         # x86_64 mac
           - macos-latest     # aarch64 mac
 
         # platform and arch info for naming the binary
         include:
-          - os: ubuntu-24.04
-            os_name: linux-gnu
-            arch_name: x86_64
-            conjure_prefix: linux
-
-          - os: ubuntu-24.04-arm
-            os_name: linux-gnu
-            arch_name: aarch64
-            conjure_prefix: linux
-
           - os: macos-13
             os_name: darwin
             arch_name: x86_64
@@ -155,7 +265,6 @@ jobs:
           rm -rf bin/${CONJURE_FOLDER}
 
       - name: Prepare releases
-        if: ${{ !(matrix.arch_name == 'aarch64' && matrix.os_name == 'linux-gnu') }}
         run: |
           mkdir dist 
 
@@ -165,17 +274,58 @@ jobs:
           zip "../dist/${{ env.release_prefix }}-with-solvers.zip" *
           cd ..
 
-      - name: Prepare releases (linux-aarch64)
-        if: ${{ matrix.arch_name == 'aarch64' && matrix.os_name == 'linux-gnu' }}
+      - name: Save builds
+        uses: actions/upload-artifact@v4
+        with: 
+          name: ${{ env.release_prefix }}
+          path: dist/*.zip
+
+  build_nightly_linux:
+    name: "Build Nightly (x86_64-linux-gnu)"
+    needs: 
+      - check_date
+      - publish_build_container
+    if: ${{ needs.check_date.outputs.should_run != 'false' }}
+    runs-on: ubuntu-latest
+    container: "ghcr.io/${{ github.repository}}:build-environment-nightly"
+    env: 
+      release_prefix: "x86_64-linux-gnu-conjure-oxide-nightly"
+      conjure_prefix: "linux"
+      conjure_version: 2.5.1
+
+    steps:
+      - name: Align with container ownership
+        run: chown root:root .
+
+      - uses: actions/checkout@v4
+
+      - name: Install rust
+        run: rustup update stable && rustup default stable
+
+      - name: Build release 
+        run: |
+          cargo build --release -p conjure_oxide
+          mkdir -p bin # place to store all the different stuff we want to add to the release
+          cp target/release/conjure_oxide bin
+
+      - name: Download Conjure release
+        run: |
+          CONJURE_FOLDER="conjure-v${{ env.conjure_version }}-${{ env.conjure_prefix }}-with-solvers"
+          CONJURE_ZIP="${CONJURE_FOLDER}.zip"
+
+          wget "https://github.com/conjure-cp/conjure/releases/download/v${{ env.conjure_version }}/${CONJURE_ZIP}"
+          unzip -d bin ${CONJURE_ZIP}
+          mv bin/${CONJURE_FOLDER}/* bin/
+          rm -rf bin/${CONJURE_FOLDER}
+
+      - name: Prepare releases
         run: |
           mkdir dist 
 
-          # no conjure version for linux-aarch64 yet
-          
           cd bin
           zip "../dist/${{ env.release_prefix }}-standalone.zip" conjure_oxide
-          # zip "../dist/${{ env.release_prefix }}-with-conjure.zip" conjure_oxide conjure
-          # zip "../dist/${{ env.release_prefix }}-with-solvers.zip" *
+          zip "../dist/${{ env.release_prefix }}-with-conjure.zip" conjure_oxide conjure
+          zip "../dist/${{ env.release_prefix }}-with-solvers.zip" *
           cd ..
 
       - name: Save builds
@@ -187,7 +337,9 @@ jobs:
   create_release:
     runs-on: ubuntu-latest
     name: Create release
-    needs: build_nightly 
+    needs: 
+      - build_nightly_mac
+      - build_nightly_linux
     steps:
       - uses: actions/checkout@v4
       - run: mkdir dist
@@ -215,3 +367,4 @@ jobs:
           # create release
           gh release delete nightly || true # ensure release doesn't exist (don't fail if it doesn't, as it may not!)
           gh release create nightly --notes-from-tag --prerelease --title "nightly ($(date -I))" --verify-tag dist/*.zip
+
