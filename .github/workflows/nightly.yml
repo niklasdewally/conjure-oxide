@@ -251,6 +251,11 @@ jobs:
       - name: Install rust
         run: rustup update stable && rustup default stable
 
+      - name: Install Conjure (for testing)
+        uses: ./.github/actions/install-conjure
+        with:
+          os_arch: ${{ matrix.conjure_prefix }}
+
       - name: Test
         run: |
           cargo test --release
@@ -306,6 +311,11 @@ jobs:
         run: chown root:root .
 
       - uses: actions/checkout@v4
+
+      - name: Install Conjure (for testing)
+        uses: ./.github/actions/install-conjure
+        with:
+          os_arch: linux
 
       - name: Test
         run: |
